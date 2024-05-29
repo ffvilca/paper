@@ -105,6 +105,7 @@ datos_finales <- datitos %>%
                              ifelse(e6a == 14 | e6a == 15,"post",0))))) %>%
   filter(nivel_educ != 0) %>% 
   mutate(log_sueldo = log(y1)) %>% 
+  select(y1,log_sueldo,leer_escribir,nse_2,edad,nivel_educ) %>% 
   na.omit() 
 
 datos_finales$nse_2 <- factor(datos_finales$nse_2, 
@@ -125,4 +126,17 @@ chisq.test(prop.table(tablita,1) * 100 )
 # no hay independencia 
 # significa que existe relacion entre el nivel educacional y el nse
 
+# como existe relacion buscaremos predecir el sueldo en base algunas variables 
+
+modelo <- lm(y1 ~., datos_finales)
+
+modelo <- lm(y1 ~.-log_sueldo-leer_escribir-edad, datos_finales)
+
+modelo <- lm(y1 ~ nivel_educ, datos_finales) # bueno
+modelo <- lm(log(y1) ~ nivel_educ, datos_finales) # mejor (creo)
+
+summary(modelo)
+anova(modelo)
+
+plot(modelo)
 
