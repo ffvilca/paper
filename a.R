@@ -3,9 +3,11 @@ data = rio::import(file.choose())
 
 library(tidyverse)
 data_filt = data %>% select(region, area, nse, hogar, p9, p10,
-                            edad, sexo, ecivil, e1, e6a, e7, e8, e12a, e12b, e12c, e12d, e12e, e13b_1, e13b_2,
-                            e13b_3, e13b_4, e13b_5, e13b_6, e13b_7, e13b_8, e13b_9, e13b_10, e13b_11, e14a, e14b, e14c, e14d, e14e, 
-                            e16, e18, o10, y1)
+                            edad, sexo, ecivil, e1, e6a, e7, e8, e12a,
+                            e12b, e12c, e12d, e12e, e13b_1, e13b_2,
+                            e13b_3, e13b_4, e13b_5, e13b_6, e13b_7,
+                            e13b_8, e13b_9, e13b_10, e13b_11, e14a, e14b,
+                            e14c, e14d, e14e,e16, e18, o10, y1)
 
 #nse
 #p9 cuántos viven en la casa
@@ -61,13 +63,13 @@ table(b$nse, b$e6a)
 table(datitos$e6a, datitos$nse)
 prop.table(table(datitos$e6a, datitos$nse), 2)
 
-c = datitos %>% select(nse, e6a) %>% na.omit() 
+c = datitos %>% select(y1,nse, e6a) %>% na.omit() 
 
 c$e6a = as.factor(c$e6a)
 c$nse = as.factor(c$nse)
 
 
-summary(lm(nse ~ e6a, c))
+summary(lm(y1 ~ e6a, c))
 
 table(b$nse)
 table(b$edad)
@@ -85,3 +87,42 @@ modelo <- lm(y1 ~ .,b) #no
 summary(modelo)
 
 lm(nse~e6a, b) #no
+
+# Limpiando la base
+
+datos_finales <- datitos %>% 
+  select(y1,nse,edad,e1,e6a) %>% 
+  mutate(leer_escribir = ifelse(e1 != 1, 0, 1)) %>% 
+  filter(y1 != 0) %>% 
+  mutate(nse_2 = ifelse(nse == 1,"bajo",
+                        ifelse(nse == 2,"medio",
+                               ifelse(nse == 3,"alto",0)))) %>% 
+  filter(nse_2 != 0) %>% 
+  mutate(nivel_educ = ifelse(e6a == 6 | e6a == 7,"basica",
+                             ifelse(e6a == 8 | e6a == 9 | 
+                                      e6a == 10 | e6a == 11,"media",
+                                    ifelse(e6a == 12 | e6a == 13,"tec-uni",
+                             ifelse(e6a == 14 | e6a == 15,"post",0))))) %>%
+  filter(nivel_educ != 0) %>% 
+  mutate(log_sueldo = log(y1)) %>% 
+  na.omit() 
+
+datos_finales$nse_2 <- factor(datos_finales$nse_2, 
+                              levels = c("bajo","medio","alto"))
+datos_finales$nivel_educ <- factor(datos_finales$nivel_educ, 
+                              levels = c("basica","media","tec-uni","post"))
+datos_finales$leer_escribir<- factor(datos_finales$leer_escribir,
+                                     levels = c(0,1))
+
+tablita <- table(datos_finales$nivel_educ,datos_finales$nse_2)
+
+prop.table(tablita,1) * 100 
+prop.table(tablita,2) * 100
+
+chisq.test(tablita) 
+chisq.test(prop.table(tablita,1) * 100 )
+
+# no hay independencia 
+# significa que existe relacion entre el nivel educacional y el nse
+
+
