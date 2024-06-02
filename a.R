@@ -175,13 +175,13 @@ lmtest::bptest(modelo4) #varianza no cte, hetero
 plot(modelo8, which = 1) #residuos
 plot(modelo8, which = 1) #residuos estandarizados
 hist(residuals(modelo8)) #densidad residuos
-qqnorm(residuals(modelo8))
-qqline(residuals(modelo8))
+qqnorm(residuals(modelo8), col="pink")
+qqline(residuals(modelo8), col="pink")
 
 lmtest::bptest(modelo8) #varianza no cte, hetero
 
-qqnorm(residuals(modelo7))
-qqline(residuals(modelo7))
+qqnorm(residuals(modelo7), col="red")
+qqline(residuals(modelo7), col="red")
 
 qqnorm(residuals(modelo6))
 qqline(residuals(modelo6))
