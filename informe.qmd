@@ -13,6 +13,19 @@ Las diferencias educativas en Chile reflejan profundas desigualdades en los ingr
 
 en volá añadir un gráfico, para que no se vea tan básico
 
+análisis
+
+|                         | Bajo  | Medio | Alto  |
+|-------------------------|-------|-------|-------|
+| Básica                  | 55,4% | 39.9% | 4,7%  |
+| Media                   | 39.7% | 48.5% | 11.8% |
+| Técnico / Universitario | 18.5% | 45.5% | 35.9% |
+| Postgrado               | 4.4%  | 27.5% | 68.2% |
+
+La tabla anterior, indica que las personas con educación básica tienen una mayor probabilidad de estar en la categoría "Bajo" y una muy baja probailidad de estar en la categoría "Alto". Además, las personas con educación de Postgrado tienen una muy baja probabilidad de estar en la categoría "Bajo" y una alta probabilidad de estar en la categoría "Alto".
+
+Se realizó la prueba de Chi-cuadrado que indicó que hay una relación estadísticamente significativa entre las variables de la tabla, es decir, la distribución del nivel socioeconómico varía significativamente según el nivel educativo. 
+
 # Metodología
 
 En primer lugar, se transformaron y limpiaron los datos para una mejor comprensión del problema. El nivel socioeconómico se sub-dividió en tres categorías: "bajo", "medio" y "alto". La variable nivel educacional ahora comprende "básica", "media", "técnico o universitario" y "postgrado".
