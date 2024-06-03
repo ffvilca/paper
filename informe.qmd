@@ -1,0 +1,33 @@
+---
+title: "El rol del Nivel educacional en la distribución de los Ingresos del Hogar chileno."
+author:
+  - name: "Constanza Segovia Gonzalez"
+  - name: "Francisca Vilca Sánchez"
+format: pdf
+editor: visual
+---
+
+# Introducción:
+
+Las diferencias educativas en Chile reflejan profundas desigualdades en los ingresos, donde niveles educativos más altos tienden a relacionarse con mayores ingresos. Este fenómeno crea un ciclo de desigualdad, donde las familias con bajos ingresos enfrentan dificultades para acceder a una educación de calidad, lo que limita sus oportunidades de empleo y perpetúa la brecha económica entre los distintos estratos sociales. En este estudio, se busca responder a la pregunta de investigación: ¿Cómo influye el nivel educacional en los ingresos del hogar chileno? Para ello, se investigará cómo varía la influencia del nivel educacional en los ingresos del hogar según el nivel educativo alcanzado (educación básica, media, superior) y se identificará la efectividad de intervenciones educativas en la reducción de la brecha de ingresos entre distintos grupos socioeconómicos.
+
+en volá añadir un gráfico, para que no se vea tan básico
+
+ # Metodología 
+
+En primer lugar, se transformaron y limpiaron los datos para una mejor comprensión del problema. El nivel socioeconómico se sub-dividió en tres categorías: "bajo", "medio" y "alto". La variable nivel educacional ahora comprende "básica", "media", "técnico o universitario" y "postgrado".
+
+Para el análisis estadístico del problema, se empleó un análisis de regresión lineal múltiple para evaluar la relación entre el nivel educativo y los ingresos del hogar. Las variables utilizadas incluyen el nivel educativo, el ingreso del hogar, la edad, el género y el nivel de empleo del jefe de hogar. Se crearon distintos modelos, algunos de ellos incluyendo el sexo como interacción y efecto aleatorio.
+
+aquí tabla resumen de los modelos (no necesariamente todos)
+
+El modelo 7 se destacó como el más adecuado, incluyendo efectos aleatorios y la interacción entre nivel_educ y sexo. Este modelo se define como:
+
+escribirlo bonito xd
+
+El modelo 7 permite entender cómo el nivel educacional y el sexo del jefe de hogar influyen en los ingresos. Los principales resultados indican que existe una interacción significativa entre el nivel educativo y el sexo en la predicción del ingreso del hogar, además, al agregar efectos aleatorios se logra capturar variabilidad no explicada entre los niveles de sexo, mejorando así la precisión del modelo. 
+
+
+El análisis confirma que existe una relación significativa entre el nivel educativo y los ingresos del hogar en Chile. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica. El modelo 7, que incluye efectos aleatorios y la interacción entre nivel educativo y sexo, es el más robusto para predecir los ingresos del hogar.
+
+Los resultados subrayan la importancia de mejorar el acceso a la educación de calidad, especialmente para familias de bajos ingresos, y sugieren que intervenciones como becas y programas de apoyo académico pueden ser efectivas para reducir la brecha de ingresos entre distintos grupos socioeconómicos. Este estudio destaca la necesidad de políticas públicas enfocadas en la equidad educativa como un medio para mitigar la desigualdad de ingresos en Chile.
