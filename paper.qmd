@@ -4,10 +4,9 @@ author:
   - name: "Constanza Segovia Gonzalez"
   - name: "Francisca Vilca Sánchez"
 abstract: |
-  $\centering{\textbf{Abstract:}
+  $\centering{\textbf{Abstract:}}$
   
-  Las 120 palabras qls de abstract adipiscing elit. Donec efficitur posuere maximus. Nam rutrum eget leo in ultrices. Vestibulum tristique est vel tortor lacinia fermentum. Curabitur bibendum lacus eu neque fringilla, non volutpat orci sagittis. Pellentesque sit amet libero tempus, ultrices nunc et, consectetur dolor. Nulla sit amet nisi malesuada, pellentesque quam vel, lobortis eros. Ut facilisis aliquet lectus, eu semper purus rutrum non. Aenean at pulvinar mauris, sit amet molestie orci. Etiam sed quam risus. Cras luctus blandit pulvinar. Sed ac purus vitae sapien euismod lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam ac nibh vel tellus maximus blandit. Nam vel nisl eros. Cras eget eros non orci gravida dictum vitae ut lectus. Integer rutrum. 
-
+  Este documento presenta un estudio que analiza la relación entre el nivel educacional del jefe de hogar y el ingreso familiar de los hogares en Chile, utilizando datos de la Encuesta CASEN 2022. Mediante un análisis de regresión lineal múltiple, se evalúa cómo los niveles educativos afectan los ingresos, considerando variables adicionales como sexo, edad y nivel de empleo. Los resultados muestran que un mayor nivel educativo se asocia con ingresos más altos, perpetuando la desigualdad socioeconómica. El modelo más robusto incluye efectos aleatorios y la interacción entre nivel educativo y sexo. Este análisis subraya la necesidad de políticas públicas que mejoren el acceso a la educación de calidad para reducir la brecha de ingresos en Chile. 
 format:
   pdf: default
   simple-article-pdf:
@@ -45,19 +44,31 @@ execute:
 
 "Según datos de 2017, Chile tiene uno de los índices más altos en desigualdad educativa entre los países de la OCDE, expresado en el índice Gini con un 0,503. Dicho de otro modo, los ingresos del 10% más rico del país son 26 veces más altos que los ingresos del 10% más pobre en Chile; una cifra que es señal de alarma." (Good Neighbors Chile, 2023) ante esta realidad que no ha cambiaddo en el último tiempo es posiible afirmar que las diferencia educativas en Chile reflejan profundas desigualdades en los ingresos, donde los niveles educativos más altos tienden a relacionarse con mayores ingresos. Este fenómeno crea un ciclo de desigualdad, donde las familias con bajos ingresos enfrentan mayores dificultades para acceder a una educación de calidad, limitando así sus oportunidades de empleo, perpetúando así la brecha económica entre los distintos estratos sociales. 
 
-En Chile, existen 
+En Chile, existe la conocida Encuesta de Caracterización Socioeconómica Nacional (CASEN), a cargo del Ministerio de Desarrollo Social, tiene como algunos objetivos el "conocer la situación de pobreza por ingresos
+y multidimensional de las personas y los hogares, así como la distribución del ingreso de los hogares e identificar las carencias de la población en áreas como educación, salud, vivienda y entorno, trabajo, cohesión social, entre otras." (Calvo, 2024). Esta herramienta es de mucha utilidad para dar credibilidad a una gran cantidad de acciones por parte del gobierno de turno. Además, este instrumento es fundamental para la comprensión del país y de las políticas públicas que se implementen para mejorar la sociedad.
 
-En este estudio, se busca responder a la pregunta de investigación: ¿Cómo influye el nivel educacional en los ingresos del hogar chileno? Para ello, se investigará cómo varía la influencia del nivel educacional en los ingresos del hogar según el nivel educativo alcanzado (educación básica, media, superior) y se identificará la efectividad de intervenciones educativas en la reducción de la brecha de ingresos entre distintos grupos socioeconómicos.
+Como en este estudio, se busca dar respuesta a: ¿Cómo influye el nivel educacional en los ingresos del hogar chileno?, es que mediante los datos que provee la Encuesta CASEN 2022, se investigará cómo varía la influencia del nivel educacional en los ingresos del hogar según el máximo nivel educativo alcanzado por el jefe de hogar (educación básica, media, superior o postgrado) y se identificará la efectividad de intervenciones educativas en la reducción de la brecha de ingresos entre distintos grupos socioeconómicos.
 
-Esta investigación se organizará en 4 secciones. La segunda, consiste en dar un contexto sobre la naturaleza de los datos IDPS que se usarán de modo práctico. En la tercera sección, se explicará la metodología usada para el mecanismo de obtención de los puntajes bifactor para ítemes politómicos y la extensión del método de Haebara que se usará para encontrar las constantes de equating que serán usadas para hacer la equivalencia con el año que sigue. A continuación, en la cuarta sección, se presentará el mecanismo del estudio de simulación para comprobar que la extensión planteada con el método Haebara es correcta. En la quinta parte, se mostrarán los resultados de la simulación comprobando el funcionamiento del método. Finalmente, en la sexta y última sección, se entregán las conclusiones sobre los resultados obtenidos y algunos comentarios sobre que se podría hacer con esta investigación.
+Esta investigación se organizará en 4 secciones. La segunda, consiste en explicar la metodología usada para comprobar la relación entre los ingresos del hogar y el nivel educacional del jefe de hogar, luego se presentará el modelo utilizado para expresar la relación entre las variables menccionadas, más algunas covariables que se cree que ayudará a entender mejor el fenómeno, como  el sexo del jefe de hogar. A continuación, en la tercera sección, se mostrarán los resultados del modelo y como este ajuste es válido para los datos. Finalmente, en la sexta y última sección, se entregán las conclusiones sobre los resultados obtenidos y algunos comentarios sobre que se podría hacer con esta investigación.
 
 # Metodología
 
-Los datos que recolecta la encuesta "Otros Indicadores de Calidad o Indicadores de Desarrollo Personal y Social (IDPS), son un conjunto de índices que entregan información relacionada con el desarrollo personal y social de los estudiantes de un establecimiento" (Agencia de Calidad de la Educación, 2023). Esto lo realiza midiendo diferentes indicadores como "*Autoestima Académica y Motivación Escolar*","*Clima de Convivencia Escolar*","*Participación y Formación Ciudad*","*Asistencia Escolar*", entre otros.
+En primer lugar, se transformaron y limpiaron los datos para una mejor comprensión del problema. El nivel socioeconómico se sub-dividió en tres categorías: "bajo", "medio" y "alto". La variable nivel educacional ahora comprende "básica", "media", "técnico o universitario" y "postgrado".
 
-En esta investigación el foco estará en el Clima de Convivencia Escolar. Este es un constructo que es evaluado mediante cuestionarios de autoreporte donde estudiantes, docentes, padres y apoderados evalúan al establecimiento con respecto a tres dimensiones, el Ambiente de Respeto, el Ambiente Organizado y el Ambiente Seguro. Como el objetivo es lograr equiparar puntajes obtenidos en pruebas no-cognitivas, para ejemplificar se usará la respuesta de 9679 docentes para 16 ítemes politómicos en el año 2017, específicamente en la dimensión de Ambiente Seguro.
+Para el análisis estadístico del problema, se empleó un análisis de regresión lineal múltiple para evaluar la relación entre el nivel educativo y los ingresos del hogar. Las variables utilizadas incluyen el nivel educativo, el ingreso del hogar, la edad, el género y el nivel de empleo del jefe de hogar. Se crearon distintos modelos, algunos de ellos incluyendo el sexo como interacción y efecto aleatorio.
 
-El cuestionario de autoreporte usado para medir la dimensión de Ambiente Seguro en su mayoría es evaluado con escalas, como una escala Likert (Likert, 1932) o una escala de frecuencia. La escala de Likert permite capturar realmente la percepción de los individuos con respecto a sus vivencias, por ejemplo, "Totalmente en desacuerdo","En desacuerdo","Indiferente","De acuerdo", "Totalmente de acuerdo", etc. A su vez, las escalas de frecuencia se utilizan para medir la frecuencia de algún evento de interés, por ejemplo, "Muy frecuentemente","Frecuentemente","Ocasionalmente", "Raramente", "Nunca", etc. Como los 16 ítemes de este cuestionario son de alguna de esta categoría, se puede afirmar que se está trabajando con respuesta politómicas, lo que obliga a buscar un modelo que sea capaz de ajustarse a estos datos.
+aquí tabla resumen de los modelos (no necesariamente todos)
+
+El modelo 7 se destacó como el más adecuado, incluyendo efectos aleatorios y la interacción entre nivel_educ y sexo. Este modelo se define como:
+
+escribirlo bonito xd
+
+El modelo 7 permite entender cómo el nivel educacional y el sexo del jefe de hogar influyen en los ingresos. Los principales resultados indican que existe una interacción significativa entre el nivel educativo y el sexo en la predicción del ingreso del hogar, además, al agregar efectos aleatorios se logra capturar variabilidad no explicada entre los niveles de sexo, mejorando así la precisión del modelo.
+
+El análisis confirma que existe una relación significativa entre el nivel educativo y los ingresos del hogar en Chile. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica. El modelo 7, que incluye efectos aleatorios y la interacción entre nivel educativo y sexo, es el más robusto para predecir los ingresos del hogar.
+
+Los resultados subrayan la importancia de mejorar el acceso a la educación de calidad, especialmente para familias de bajos ingresos, y sugieren que intervenciones como becas y programas de apoyo académico pueden ser efectivas para reducir la brecha de ingresos entre distintos grupos socioeconómicos. Este estudio destaca la necesidad de políticas públicas enfocadas en la equidad educativa como un medio para mitigar la desigualdad de ingresos en Chile.
+
 
 # Resultados
 
