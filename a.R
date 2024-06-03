@@ -82,7 +82,7 @@ summary(modelo8)
 
 anova(modelo1)
 anova(modelo2)
-anova(modelo3)
+anova(modelo4)
 anova(modelo6)
 anova(modelo7)
 anova(modelo8)

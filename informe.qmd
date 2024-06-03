@@ -36,7 +36,13 @@ aquí tabla resumen de los modelos (no necesariamente todos)
 
 El modelo 7 se destacó como el más adecuado, incluyendo efectos aleatorios y la interacción entre nivel_educ y sexo. Este modelo se define como:
 
-escribirlo bonito xd
+
+|                                                      | F value  |
+|------------------------------------------------------|----------|
+| Modelo lm(y1 ~.)                                     | 401.733  |
+| Modelo lm(log(y1) ~ nivel_educ)                      | 2801.6   |
+| Modelo lmer(log(y1) ~ nivel_educ + (1 \| sexo))      | 3231.3   |
+| Modelo lmer(log(y1) ~ nivel_educ*sexo + (1 \| sexo)) | 3231.291 |
 
 El modelo 7 permite entender cómo el nivel educacional y el sexo del jefe de hogar influyen en los ingresos. Los principales resultados indican que existe una interacción significativa entre el nivel educativo y el sexo en la predicción del ingreso del hogar, además, al agregar efectos aleatorios se logra capturar variabilidad no explicada entre los niveles de sexo, mejorando así la precisión del modelo.
 
