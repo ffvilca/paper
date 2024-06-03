@@ -53,9 +53,7 @@ Esta investigación se organizará en distintas secciones. A continuación, se e
 
 # Metodología
 
-En primer lugar, se transformaron y limpiaron los datos para una mejor comprensión del problema. El nivel socioeconómico se sub-dividió en tres categorías: "bajo", "medio" y "alto". La variable nivel educacional ahora comprende "básica", "media", "técnico o universitario" y "postgrado".
-
-A continuación, se adjunta una tabla resumen de la composición de los datos. 
+Como se ha mencionado a lo largo de este trabajo la principal herramienta que se usará para dar respuesta a la pregunta de investigación es mediante los resultados de la encuesta CASEN del año 2022, para ello se transformaron y limpiaron los datos disponibles para una mejor comprensión del problema. El nivel socioeconómico se trabao seleccionando solo tres categorías: "bajo", "medio" y "alto". Luego, la variable del nivel educacional se modificó para seleccionar solo los niveles de educación "básica", "media", "técnico o universitario" y "postgrado". A continuación, se adjunta la Tabla 1 con un resumen de la composición de los datos. 
 
 |                         | Bajo  | Medio | Alto  |
 |-------------------------|-------|-------|-------|
@@ -64,11 +62,11 @@ A continuación, se adjunta una tabla resumen de la composición de los datos.
 | Técnico / Universitario | 18.5% | 45.5% | 35.9% |
 | Postgrado               | 4.4%  | 27.5% | 68.2% |
 
-La tabla anterior, indica que las personas con educación básica tienen una mayor probabilidad de estar en la categoría "Bajo" y una muy baja probailidad de estar en la categoría "Alto". Además, las personas con educación de Postgrado tienen una muy baja probabilidad de estar en la categoría "Bajo" y una alta probabilidad de estar en la categoría "Alto".
+: Distribución de niveles del educacional y socieconómico de CASEN 2022
 
-Además, se realizó la prueba de Chi-cuadrado que indicó que hay una relación estadísticamente significativa entre las variables de la tabla, es decir, la distribución del nivel socioeconómico varía significativamente según el nivel educativo. 
+La Tabla 1, indica que las personas con educación básica tienen una mayor probabilidad de estar en la categoría "Bajo" y una muy baja probabilidad de estar en la categoría "Alto". Además, las personas con educación de Postgrado tienen una muy baja probabilidad de estar en la categoría "Bajo" y una alta probabilidad de estar en la categoría "Alto". Además, se realizó un test de Chi-cuadrado de Pearson en el que se rechaza la hipótesis nula de independecia con un valor-p extremadamente pequeño, por lo que se indica que hay una relación estadísticamente significativa entre las variables de la Tabla 1, es decir, la distribución del nivel socioeconómico varía significativamente según el nivel educativo. 
 
-Para el análisis estadístico del problema, se empleó un análisis de regresión lineal múltiple para evaluar la relación entre el nivel educativo y los ingresos del hogar. Las variables utilizadas incluyen el nivel educativo, el ingreso del hogar, la edad, el género y el nivel de empleo del jefe de hogar. Se crearon distintos modelos, algunos de ellos incluyendo el sexo como interacción y efecto aleatorio.
+Ahora que se tiene evidencia estadística para validar la creación de un modelo que lo explique se empleó un análisis de regresión lineal múltiple para evaluar la relación entre el nivel educativo y los ingresos del hogar. Para ello, las variables utilizadas incluyen el nivel educativo, el ingreso del hogar, la edad, el género y el nivel de empleo para el jefe de hogar. Se crearon distintos modelos, algunos de ellos incluyendo el sexo como interacción y efecto aleatorio.
 
 aquí tabla resumen de los modelos (no necesariamente todos)
 
@@ -91,13 +89,6 @@ El primer problema que se enfrenta al querer realizar una comparación entre los
 
 Para resumir, el objetivo principal de esta investigación, era encontrar constantes de linking que permitieran comparar puntajes de pruebas no cognitivas a lo largo del tiempo. Para ello se usó la base de datos de los IDPS, específicamente en el área de Clima de Convivencia Escolar donde mediante la extensión del método Haebara para modelos multidimensionales con estructura bi-factor, se quería comprobar su funcionamiento.
 
-El proceso de simulación de esta investigación fue bastante complejo, debido al costo computacional que se necesitaba para encontrar las constantes de equating. Se hicieron diversos intentos, para disminuir el tiempo de ejecución del código, sin presentar ninguna mejora. A pesar de buscar diversas formas de optimizar el algoritmo, no se logró y se tuvo que recurrir al uso de un servidor externo para llevar a cabo la ejecución del código. Por lo mismo, es que solo se crearon $n = 100$ sets de datos, para el proceso de simulación.
-
-A pesar del costo computacional del proceso, con los resultados presentados en la Tabla 2 se logra respaldar la validez y robustez del método propuesto. Lo que no es solo un cálculo de valores que permite tener puntajes del Ambiente Seguro en la misma escala sino que, permite dar válidez a las comparaciones en este constructo, tema importante, ya sea para la ACE o para los propios establecimientos educacionales.
-
-La metodología para obtener constantes de equating basada en curvas características presentada en este trabajo puede ser extendida en varias direcciones. Por ejemplo, existe otro método similar presentado en Stocking & Lord (1938) en donde el proceso de optimización se basa en una suma levemente distinta a la utilizada en el método de Haebara. Otra posible extensión involucra la incorporación de información adicional para obtener las constantes de equating, ya sea mediante el uso de covariables de contexto (en el caso de cuestionarios autoreportados escritos), o por medio de información adicional en forma de "process data" (en el caso de mediciones realizadas en plataformas digitales).
-
-En conclusión, este trabajo destaca la importancia de considerar aspectos no-cognitivos en la evaluación de la calidad de la educación y proporciona una metodología que permite hacer equivalentes las evaluaciones en el área de Clima de Convivencia Escolar que eventualmente se puede extendedr a otras dimensiones. Este trabajo deja en manos de las autoridades educativas datos importantes sobre como están siendo educados sus estudiantes y cuales son los puntos débiles que habría que mejorar para continuar potenciando el sistema educacional en beneficio de todos.
 
 
 # Referencias
