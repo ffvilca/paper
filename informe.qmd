@@ -13,7 +13,7 @@ Las diferencias educativas en Chile reflejan profundas desigualdades en los ingr
 
 en volá añadir un gráfico, para que no se vea tan básico
 
- # Metodología 
+# Metodología
 
 En primer lugar, se transformaron y limpiaron los datos para una mejor comprensión del problema. El nivel socioeconómico se sub-dividió en tres categorías: "bajo", "medio" y "alto". La variable nivel educacional ahora comprende "básica", "media", "técnico o universitario" y "postgrado".
 
@@ -25,8 +25,7 @@ El modelo 7 se destacó como el más adecuado, incluyendo efectos aleatorios y l
 
 escribirlo bonito xd
 
-El modelo 7 permite entender cómo el nivel educacional y el sexo del jefe de hogar influyen en los ingresos. Los principales resultados indican que existe una interacción significativa entre el nivel educativo y el sexo en la predicción del ingreso del hogar, además, al agregar efectos aleatorios se logra capturar variabilidad no explicada entre los niveles de sexo, mejorando así la precisión del modelo. 
-
+El modelo 7 permite entender cómo el nivel educacional y el sexo del jefe de hogar influyen en los ingresos. Los principales resultados indican que existe una interacción significativa entre el nivel educativo y el sexo en la predicción del ingreso del hogar, además, al agregar efectos aleatorios se logra capturar variabilidad no explicada entre los niveles de sexo, mejorando así la precisión del modelo.
 
 El análisis confirma que existe una relación significativa entre el nivel educativo y los ingresos del hogar en Chile. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica. El modelo 7, que incluye efectos aleatorios y la interacción entre nivel educativo y sexo, es el más robusto para predecir los ingresos del hogar.
 
