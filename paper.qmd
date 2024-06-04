@@ -68,28 +68,32 @@ La Tabla 1, indica que las personas con educación básica tienen una mayor prob
 
 Ahora que se tiene evidencia estadística para validar la creación de un modelo que lo explique se empleó un análisis de regresión lineal múltiple para evaluar la relación entre el nivel educativo y los ingresos del hogar. Para ello, las variables utilizadas incluyen el nivel educativo, el ingreso del hogar, la edad, el género y el nivel de empleo para el jefe de hogar. Se crearon distintos modelos, algunos de ellos incluyendo el sexo como interacción y efecto aleatorio.
 
-aquí tabla resumen de los modelos (no necesariamente todos)
 
-El modelo 7 se destacó como el más adecuado, incluyendo efectos aleatorios y la interacción entre nivel_educ y sexo. Este modelo se define como:
+|                                                      | F value  |
+|------------------------------------------------------|----------|
+| Modelo lm(y1 ~.)                                     | 401.733  |
+| Modelo lm(log(y1) ~ nivel_educ)                      | 2801.6   |
+| Modelo lmer(log(y1) ~ nivel_educ  + (1 | sexo))      | 3231.3   |
+| Modelo lmer(log(y1) ~ nivel_educ*sexo  + (1 | sexo)) | 3231.291 |
 
-escribirlo bonito xd
+El modelo lmer(log(y1) ~ nivel_educ  + (1 | sexo)) es el modelo que tiene el valor F más alto, lo que indica que este modelo puede ser el mejor en términos de ajuste a los datos. Sin embargo, la diferencia con el modelo lmer(log(y1) ~ nivel_educ*sexo  + (1 | sexo)) es mínima, por lo que, se tomó la decisión de dejar ese modelo como el modelo final e incluir la interacción de sexo. Este modelo permite entender cómo el nivel educacional y el sexo del jefe de hogar influyen en los ingresos. Los principales resultados indican que existe una interacción significativa entre el nivel educativo y el sexo en la predicción del ingreso del hogar, además, al agregar efectos aleatorios se logra capturar variabilidad no explicada entre los niveles de sexo, mejorando así la precisión del modelo.
 
-El modelo 7 permite entender cómo el nivel educacional y el sexo del jefe de hogar influyen en los ingresos. Los principales resultados indican que existe una interacción significativa entre el nivel educativo y el sexo en la predicción del ingreso del hogar, además, al agregar efectos aleatorios se logra capturar variabilidad no explicada entre los niveles de sexo, mejorando así la precisión del modelo.
-
-El análisis confirma que existe una relación significativa entre el nivel educativo y los ingresos del hogar en Chile. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica. El modelo 7, que incluye efectos aleatorios y la interacción entre nivel educativo y sexo, es el más robusto para predecir los ingresos del hogar.
+El análisis confirma que existe una relación significativa entre el nivel educativo y los ingresos del hogar en Chile. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica. 
 
 Los resultados subrayan la importancia de mejorar el acceso a la educación de calidad, especialmente para familias de bajos ingresos, y sugieren que intervenciones como becas y programas de apoyo académico pueden ser efectivas para reducir la brecha de ingresos entre distintos grupos socioeconómicos. Este estudio destaca la necesidad de políticas públicas enfocadas en la equidad educativa como un medio para mitigar la desigualdad de ingresos en Chile.
 
 
 # Resultados
 
-El primer problema que se enfrenta al querer realizar una comparación entre los puntajes del Clima de Convivencia Escolar para distintos años (equating) es la naturaleza de los datos que se posee, ya que provienen de una escala de Likert o de una escala de frecuencia, por lo que no existe una respuesta correcta, sino que diversas categorías. Una posible solución para encontrar un modelo que se ajuste a los datos es a través de la Teoría de Respuesta al Item (IRT, por sus siglas en inglés), por lo que el problema se reduce a encontrar el mejor modelo que ajuste datos politómicos. Según la investigación de González & Robledo (2023), el mejor candidato para ajustar estos datos es un Modelo de Respuesta Graduada Multidimensional con estructura bifactor (MGRM-bifactor), ya que este presenta las mejores medidas con respecto a la bondad de ajuste, pues no hay solo una dimensión para la variable latente $\theta$, sino que para este caso en particular hay tres para el constructo a evaluar (parte bifactor del modelo) y múltiples alternativas de respuestas aceptables (parte MGRM)
+.
 
 # Conclusión/ Discusión
 
-Para resumir, el objetivo principal de esta investigación, era encontrar constantes de linking que permitieran comparar puntajes de pruebas no cognitivas a lo largo del tiempo. Para ello se usó la base de datos de los IDPS, específicamente en el área de Clima de Convivencia Escolar donde mediante la extensión del método Haebara para modelos multidimensionales con estructura bi-factor, se quería comprobar su funcionamiento.
+Este estudio confirma que las diferencias en los niveles educativos en Chile reflejan profundas desigualdades en los ingresos. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica. Estos resultados subrayan la importancia de mejorar el acceso a la educación de calidad, especialmente para las familias de bajos ingresos.
 
+Por lo anterior, se sugiere comenzar a trabajar en implementar políticas públicas que aseguren acceso equitativo a la educación de calidad para todos los niveles socioeconómico, desarrollar programas de becas y apoyo académico para estudiantes de familias de bajos ingreso, además fortalecer en mejorar los resultados educativos de grupos desfavorecidos, considerando diferencias de género. 
 
+Finalmente, se destaca la necesidad urgente de políticas públicas centradas en la equidad educativa como un medio crucial para reducir la brecha de ingresos y mitigar la desigualdad socioeconómica en Chile.
 
 # Referencias
 

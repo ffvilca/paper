@@ -110,8 +110,11 @@ qqline(residuals(modelo8), col="pink")
 
 lmtest::bptest(modelo8) #varianza no cte, hetero
 
-qqnorm(residuals(modelo7), col="red")
-qqline(residuals(modelo7), col="red")
+plot(modelo7, which = 1) #residuos
+plot(modelo7, which = 2) #residuos estandarizados
 
-qqnorm(residuals(modelo6))
-qqline(residuals(modelo6))
+qqnorm(residuals(modelo7), col="pink")
+qqline(residuals(modelo7), col="pink")
+
+lmtest::bptest(modelo7)
+shapiro.test(residuals(modelo7))
