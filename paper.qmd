@@ -42,18 +42,17 @@ execute:
 
 # Introducción
 
-"Según datos de 2017, Chile tiene uno de los índices más altos en desigualdad educativa entre los países de la OCDE, expresado en el índice Gini con un 0,503. Dicho de otro modo, los ingresos del 10% más rico del país son 26 veces más altos que los ingresos del 10% más pobre en Chile; una cifra que es señal de alarma." (Good Neighbors Chile, 2023) ante esta realidad que no ha cambiaddo en el último tiempo es posiible afirmar que las diferencia educativas en Chile reflejan profundas desigualdades en los ingresos, donde los niveles educativos más altos tienden a relacionarse con mayores ingresos. Este fenómeno crea un ciclo de desigualdad, donde las familias con bajos ingresos enfrentan mayores dificultades para acceder a una educación de calidad, limitando así sus oportunidades de empleo, perpetúando así la brecha económica entre los distintos estratos sociales. 
+"Según datos de 2017, Chile tiene uno de los índices más altos en desigualdad educativa entre los países de la OCDE, expresado en el índice Gini con un 0,503. Dicho de otro modo, los ingresos del 10% más rico del país son 26 veces más altos que los ingresos del 10% más pobre en Chile; una cifra que es señal de alarma." (Good Neighbors Chile, 2023) ante esta realidad que no ha cambiaddo en el último tiempo es posiible afirmar que las diferencia educativas en Chile reflejan profundas desigualdades en los ingresos, donde los niveles educativos más altos tienden a relacionarse con mayores ingresos. Este fenómeno crea un ciclo de desigualdad, donde las familias con bajos ingresos enfrentan mayores dificultades para acceder a una educación de calidad, limitando así sus oportunidades de empleo, perpetúando así la brecha económica entre los distintos estratos sociales.
 
-En Chile, existe la conocida Encuesta de Caracterización Socioeconómica Nacional (CASEN), a cargo del Ministerio de Desarrollo Social, que tiene como algunos objetivos el "conocer la situación de pobreza por ingresos
-y multidimensional de las personas y los hogares, así como la distribución del ingreso de los hogares e identificar las carencias de la población en áreas como educación, salud, vivienda y entorno, trabajo, cohesión social, entre otras." (Calvo, 2024). Esta herramienta es de mucha utilidad para dar credibilidad a una gran cantidad de acciones por parte del gobierno de turno. Además, este instrumento es fundamental para la comprensión del país y de las políticas públicas que se implementen para mejorar la sociedad.
+En Chile, existe la conocida Encuesta de Caracterización Socioeconómica Nacional (CASEN), a cargo del Ministerio de Desarrollo Social, que tiene como algunos objetivos el "conocer la situación de pobreza por ingresos y multidimensional de las personas y los hogares, así como la distribución del ingreso de los hogares e identificar las carencias de la población en áreas como educación, salud, vivienda y entorno, trabajo, cohesión social, entre otras." (Calvo, 2024). Esta herramienta es de mucha utilidad para dar credibilidad a una gran cantidad de acciones por parte del gobierno de turno. Además, este instrumento es fundamental para la comprensión del país y de las políticas públicas que se implementen para mejorar la sociedad.
 
 Como en este estudio, se busca dar respuesta a: ¿Cómo influye el nivel educacional en los ingresos del hogar chileno?, es que mediante los datos que provee la Encuesta CASEN 2022, se investigará cómo varía la influencia del nivel educacional en los ingresos del hogar según el máximo nivel educativo alcanzado por el jefe de hogar (educación básica, media, superior o postgrado) y se identificará la efectividad de intervenciones educativas en la reducción de la brecha de ingresos entre distintos grupos socioeconómicos.
 
-Esta investigación se organizará en distintas secciones. A continuación, se explicará la metodología usada para comprobar la relación entre los ingresos del hogar y el nivel educacional del jefe de hogar, luego se presentará el modelo utilizado para expresar la relación entre las variables menccionadas, más algunas covariables que se cree que ayudará a entender mejor el fenómeno, como  el sexo del jefe de hogar. En la siguiente sección, se mostrarán los resultados del modelo y como este ajuste es válido para los datos. Finalmente, la última sección, se entregán las conclusiones sobre los resultados obtenidos y algunos comentarios sobre que se podría hacer con esta investigación.
+Esta investigación se organizará en distintas secciones. A continuación, se explicará la metodología usada para comprobar la relación entre los ingresos del hogar y el nivel educacional del jefe de hogar, luego se presentará el modelo utilizado para expresar la relación entre las variables menccionadas, más algunas covariables que se cree que ayudará a entender mejor el fenómeno, como el sexo del jefe de hogar. En la siguiente sección, se mostrarán los resultados del modelo y como este ajuste es válido para los datos. Finalmente, la última sección, se entregán las conclusiones sobre los resultados obtenidos y algunos comentarios sobre que se podría hacer con esta investigación.
 
 # Metodología
 
-Como se ha mencionado a lo largo de este trabajo la principal herramienta que se usará para dar respuesta a la pregunta de investigación es mediante los resultados de la encuesta CASEN del año 2022, para ello se transformaron y limpiaron los datos disponibles para una mejor comprensión del problema. El nivel socioeconómico se trabajo seleccionando solo tres categorías: "bajo", "medio" y "alto". Luego, la variable del nivel educacional se modificó para seleccionar solo los niveles de educación "básica", "media", "técnico o universitario" y "postgrado". A continuación, se adjunta la Tabla 1 con un resumen de la composición de los datos. 
+Como se ha mencionado a lo largo de este trabajo la principal herramienta que se usará para dar respuesta a la pregunta de investigación es mediante los resultados de la encuesta CASEN del año 2022, para ello se transformaron y limpiaron los datos disponibles para una mejor comprensión del problema. El nivel socioeconómico se trabajo seleccionando solo tres categorías: "bajo", "medio" y "alto". Luego, la variable del nivel educacional se modificó para seleccionar solo los niveles de educación "básica", "media", "técnico o universitario" y "postgrado". A continuación, se adjunta la Tabla 1 con un resumen de la composición de los datos.
 
 |                         | Bajo  | Medio | Alto  |
 |-------------------------|-------|-------|-------|
@@ -62,32 +61,32 @@ Como se ha mencionado a lo largo de este trabajo la principal herramienta que se
 | Técnico / Universitario | 18.5% | 45.5% | 35.9% |
 | Postgrado               | 4.4%  | 27.5% | 68.2% |
 
-: Distribución de niveles del educacional y socieconómico de CASEN 2022
+La Tabla 1, indica que las personas con educación básica tienen una mayor probabilidad de estar en la categoría "Bajo" y una muy baja probabilidad de estar en la categoría "Alto". Además, las personas con educación de Postgrado tienen una muy baja probabilidad de estar en la categoría "Bajo" y una alta probabilidad de estar en la categoría "Alto". Además, se realizó un test de Chi-cuadrado de Pearson en el que se rechaza la hipótesis nula de independecia con un valor-p extremadamente pequeño, por lo que se indica que hay una relación estadísticamente significativa entre las variables de la Tabla 1, es decir, la distribución del nivel socioeconómico varía significativamente según el nivel educativo.
 
-La Tabla 1, indica que las personas con educación básica tienen una mayor probabilidad de estar en la categoría "Bajo" y una muy baja probabilidad de estar en la categoría "Alto". Además, las personas con educación de Postgrado tienen una muy baja probabilidad de estar en la categoría "Bajo" y una alta probabilidad de estar en la categoría "Alto". Además, se realizó un test de Chi-cuadrado de Pearson en el que se rechaza la hipótesis nula de independecia con un valor-p extremadamente pequeño, por lo que se indica que hay una relación estadísticamente significativa entre las variables de la Tabla 1, es decir, la distribución del nivel socioeconómico varía significativamente según el nivel educativo. 
+Ahora que se tiene evidencia estadística para validar la creación de un modelo que lo explique se empleó un análisis de regresión lineal múltiple para evaluar la relación entre el nivel educativo y los ingresos del hogar. Para ello, las variables utilizadas incluyen el nivel educativo, el ingreso del hogar, la edad, el género y el nivel de empleo para el jefe de hogar. Se crearon distintos modelos posibles, algunos de ellos incluyendo el sexo como interacción y efecto aleatorio, los que se pueden resumir en la Tabla 2:
 
-Ahora que se tiene evidencia estadística para validar la creación de un modelo que lo explique se empleó un análisis de regresión lineal múltiple para evaluar la relación entre el nivel educativo y los ingresos del hogar. Para ello, las variables utilizadas incluyen el nivel educativo, el ingreso del hogar, la edad, el género y el nivel de empleo para el jefe de hogar. Se crearon distintos modelos posibles, algunos de ellos incluyendo el sexo como interacción y efecto aleatorio, los que se pueden  resumir en la Tabla 2:
+|                                                       | F value  |
+|-------------------------------------------------------|----------|
+| Modelo lm(y1 \~.)                                     | 401.733  |
+| Modelo lm(log(y1) \~ nivel_educ)                      | 2801.600 |
+| Modelo lmer(log(y1) \~ nivel_educ + (1 / sexo))       | 3231.300 |
+| Modelo lmer(log(y1) \~ nivel_educ\*sexo + (1 / sexo)) | 3231.291 |
 
-
-|                                                      | F value  |
-|------------------------------------------------------|----------|
-| Modelo lm(y1 ~.)                                     |  401.733 |
-| Modelo lm(log(y1) ~ nivel_educ)                      | 2801.600 |
-| Modelo lmer(log(y1) ~ nivel_educ  + (1 / sexo))      | 3231.300 |
-| Modelo lmer(log(y1) ~ nivel_educ*sexo  + (1 / sexo)) | 3231.291 |
-
-: Composición de modelos propuestos  y estadístico F asociado al modelo
-
-Es posible observar de la Tabla 2 que el modelo lmer(log(y1) ~ nivel_educ  + (1 | sexo)) es el modelo que tiene el valor F más alto, lo que indica que este modelo puede ser el mejor en términos de ajuste a los datos. Sin embargo, la diferencia con el modelo lmer(log(y1) ~ nivel_educ*sexo  + (1 | sexo)) es mínima, por lo que, se tomó la decisión de dejar ese modelo como el modelo final e incluir la interacción de sexo, ya que, este modelo permite entender cómo el nivel educacional y el sexo del jefe de hogar influyen en los ingresos. Los principales resultados indican que existe una interacción significativa entre el nivel educativo y el sexo en la predicción del ingreso del hogar. Además, al agregar efectos aleatorios se logra capturar variabilidad no explicada entre los niveles de sexo, mejorando así la precisión del modelo.
+Es posible observar de la Tabla 2 que el modelo "lmer(log(y1) \~ nivel_educ + (1 \| sexo))" es el modelo que tiene el valor F más alto, lo que indica que este modelo puede ser el mejor en términos de ajuste a los datos. Sin embargo, la diferencia con el modelo "lmer(log(y1) \~ nivel_educ\*sexo + (1 \| sexo))" es mínima, por lo que, se tomó la decisión de dejar ese modelo como el modelo final e incluir la interacción de sexo, ya que, este modelo permite entender cómo el nivel educacional y el sexo del jefe de hogar influyen en los ingresos. Los principales resultados indican que existe una interacción significativa entre el nivel educativo y el sexo en la predicción del ingreso del hogar. Además, al agregar efectos aleatorios se logra capturar variabilidad no explicada entre los niveles de sexo, mejorando así la precisión del modelo.
 
 # Resultados
 
-Con la metodología estudiada y el análisis realizado se obtiene un modelo capturar la información que permite explicar como afecta el nivel educativo en los ingresos de los  hogares  en Chile. Además, existe evidencia estadística que permite validar el modelo seleccionado, pues el comportamiento de los  residuos es el deseado, tal como se presenta en los gráficos de la @fig-1:
+Con la metodología estudiada y el análisis realizado se obtiene un modelo capturar la información que permite explicar como afecta el nivel educativo en los ingresos de los hogares en Chile. Además, existe evidencia estadística que permite validar el modelo seleccionado, pues el comportamiento de los residuos es el deseado, tal como se presenta en el gráfico de la densidad de los residuos a continuación.
 
-Con esto último se confirma que existe una relación significativa entre el nivel educativo y los ingresos del hogar en Chile. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica del país. 
+![](densidad residuos)
+
+Se añade además, un qqplot que permitirá visualizar de manera mucho más clara la no presencia de normalidad en los residuos.
+
+![](qqplot)
+
+Con esto último se confirma que existe una relación significativa entre el nivel educativo y los ingresos del hogar en Chile. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica del país.
 
 Finalmente se tiene que los resultados subrayan la importancia de mejorar el acceso a la educación de calidad, especialmente para familias de bajos ingresos, y sugieren que intervenciones como becas y programas de apoyo académico pueden ser efectivas para reducir la brecha de ingresos entre distintos grupos socioeconómicos. Este estudio destaca la necesidad de políticas públicas enfocadas en la equidad educativa como un medio para mitigar la desigualdad de ingresos en Chile.
-
 
 # Conclusión/ Discusión
 
@@ -101,17 +100,14 @@ Finalmente, se destaca la necesidad urgente de políticas públicas centradas en
 
 # Referencias
 
--   Beyer, H. (1996). *Distribución del Ingreso: Un Desafío de la Educación.* En [https://static.cepchile.cl/uploads/cepchile/2022/09/pder_005_1996_12_n177.pdf.](https://static.cepchile.cl/uploads/cepchile/2022/09/pder_005_1996_12_n177.pdf) Centro de Estudios Públicos (CEP). Recuperado 3 de junio de 2024, de [https://static.cepchile.cl/uploads/cepchile/2022/09/pder_005_1996_12_n177.pdf](https://static.cepchile.cl/uploads/cepchile/2022/09/pder_005_1996_12_n177.pdf)
+-   Beyer, H. (1996). *Distribución del Ingreso: Un Desafío de la Educación.* En [https://static.cepchile.cl/uploads/cepchile/2022/09/pder_005_1996_12_n177.pdf.](https://static.cepchile.cl/uploads/cepchile/2022/09/pder_005_1996_12_n177.pdf) Centro de Estudios Públicos (CEP). Recuperado 3 de junio de 2024, de <https://static.cepchile.cl/uploads/cepchile/2022/09/pder_005_1996_12_n177.pdf>
 
-- Calvo, A., Farias, S., & Encina, J. (2024). *Serie de resultados: CASEN situación educacional de la Población* En [https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2022/Resultados_Educacion_Casen2022.pdf](https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2022/Resultados_Educacion_Casen2022.pdf) CASEN.
+-   Calvo, A., Farias, S., & Encina, J. (2024). *Serie de resultados: CASEN situación educacional de la Población* En <https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2022/Resultados_Educacion_Casen2022.pdf> CASEN.
 
-- Good Neighbors Chile. (2023, 27 julio). *Desigualdad educativa - Good Neighbors Chile. Good Neighbors Chile - Somos Buenos Vecinos.* [https://goodneighbors.cl/desigualdad-educativa/#:~:text=Seg%C3%BAn%20datos%20de%202017%2C%20Chile,que%20es%20se%C3%B1al%20de%20alarma](https://goodneighbors.cl/desigualdad-educativa/#:~:text=Seg%C3%BAn%20datos%20de%202017%2C%20Chile,que%20es%20se%C3%B1al%20de%20alarma).
+-   Good Neighbors Chile. (2023, 27 julio). *Desigualdad educativa - Good Neighbors Chile. Good Neighbors Chile - Somos Buenos Vecinos.* <https://goodneighbors.cl/desigualdad-educativa/#:~:text=Seg%C3%BAn%20datos%20de%202017%2C%20Chile,que%20es%20se%C3%B1al%20de%20alarma>.
 
+-   Reveduc. (2015, 31 marzo). *Chile, la OCDE y la desigualdad en educación: "El sistema escolar en Chile no funciona bien"* - Revista de Educación. Revista de Educación. <https://www.revistadeeducacion.cl/chile-la-ocde-y-la-desigualdad-en-educacion-el-sistema-escolar-en-chile-no-funciona-bien/>
 
--   Reveduc. (2015, 31 marzo). *Chile, la OCDE y la desigualdad en educación: “El sistema escolar en Chile no funciona bien”* - Revista de Educación. Revista de Educación. [https://www.revistadeeducacion.cl/chile-la-ocde-y-la-desigualdad-en-educacion-el-sistema-escolar-en-chile-no-funciona-bien/](https://www.revistadeeducacion.cl/chile-la-ocde-y-la-desigualdad-en-educacion-el-sistema-escolar-en-chile-no-funciona-bien/)
+-   San Martín B, H, Gazmuri, J, & Eyzaguirre, S. (2021). *Sesgo socioeconómico en las Notas de Enseñanza Media*. En <https://www.cepchile.cl>. Recuperado 3 de junio de 2024, de <https://www.cepchile.cl/investigacion/sesgo-socioeconomico-en-las-notas-de-ensenanza-media>
 
--   San Martín B, H, Gazmuri, J, & Eyzaguirre, S. (2021). *Sesgo socioeconómico en las Notas de Enseñanza Media*. En [https://www.cepchile.cl](https://www.cepchile.cl). Recuperado 3 de junio de 2024, de [https://www.cepchile.cl/investigacion/sesgo-socioeconomico-en-las-notas-de-ensenanza-media](https://www.cepchile.cl/investigacion/sesgo-socioeconomico-en-las-notas-de-ensenanza-media)
-
-- Observatorio Social - *Ministerio de Desarrollo Social y Familia. (s. f.).* [https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen](https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen)
-
-
+-   Observatorio Social - *Ministerio de Desarrollo Social y Familia. (s. f.).* <https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen>

@@ -122,4 +122,22 @@ shapiro.test(residuals(modelo7))
 residuos <- residuals(modelo7)
 ks.test(residuos, "pnorm", mean = mean(residuos), sd = sd(residuos)) #kolmogorov
 
+#al parecer saca outliers
+z_scores <- scale(datos_finales$y1)
+outliers <- which(abs(z_scores) > 3)
+datos_finales[outliers, ]
+datos_sin_outliers <- datos_finales[-outliers, ]
+
+modelo9 = lmer(log(y1) ~ nivel_educ*sexo + (1 | sexo), data = datos_sin_outliers) #modelo con sexo como interacción y efecto aleatorio
+
+residuos <- residuals(modelo9)
+ks.test(residuos, "pnorm", mean = mean(residuos), sd = sd(residuos)) #kolmogorov
+
+plot(modelo9, which = 1,  main="Residuos") #residuos
+hist(residuals(modelo9), col="#D60270", main="Densidad Residuos", xlab="Residuos", ylab="")
+
+qqnorm(residuals(modelo9), col="#9B4F96")
+qqline(residuals(modelo9), col="#0038A8")
+boxplot(datos_sin_outliers$y1)
+
 
