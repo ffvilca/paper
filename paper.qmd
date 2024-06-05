@@ -84,9 +84,9 @@ Se añade además, un qqplot que permitirá visualizar de manera mucho más clar
 
 ![](qqplot)
 
-Con esto último se confirma que existe una relación significativa entre el nivel educativo y los ingresos del hogar en Chile. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica del país.
+Si bien el qqplot no indica que los residuos presentan normalidad, la naturaleza del modelo confirma que existe una relación significativa entre el nivel educativo y los ingresos del hogar en Chile. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica del país.
 
-Finalmente se tiene que los resultados subrayan la importancia de mejorar el acceso a la educación de calidad, especialmente para familias de bajos ingresos, y sugieren que intervenciones como becas y programas de apoyo académico pueden ser efectivas para reducir la brecha de ingresos entre distintos grupos socioeconómicos. Este estudio destaca la necesidad de políticas públicas enfocadas en la equidad educativa como un medio para mitigar la desigualdad de ingresos en Chile.
+Finalmente, se tiene que los resultados subrayan la importancia de mejorar el acceso a la educación de calidad, especialmente para familias de bajos ingresos, y sugieren que intervenciones como becas y programas de apoyo académico pueden ser efectivas para reducir la brecha de ingresos entre distintos grupos socioeconómicos. Este estudio destaca la necesidad de políticas públicas enfocadas en la equidad educativa como un medio para mitigar la desigualdad de ingresos en Chile.
 
 # Conclusión/ Discusión
 
@@ -95,6 +95,8 @@ Este estudio confirma que las diferencias en los niveles educativos en Chile ref
 Estos resultados subrayan la importancia de mejorar el acceso a una educación de calidad, especialmente para las familias de bajos ingresos. Para abordar esta problemática, es fundamental implementar políticas públicas que aseguren un acceso equitativo a la educación de calidad en todos los niveles socioeconómicos. Se recomienda desarrollar programas de becas y apoyo académico para estudiantes de familias de bajos ingresos, así como fortalecer las iniciativas para mejorar los resultados educativos de los grupos desfavorecidos, considerando las diferencias de género y otras variables sociodemográficas.
 
 Además, los hallazgos de este estudio proporcionan una base sólida para futuras investigaciones y mejoras en el sistema educativo chileno. La incorporación de modelos estadísticos avanzados, como el análisis de regresión lineal múltiple con efectos aleatorios, permite identificar con mayor precisión los factores que contribuyen a la desigualdad educativa y económica. Esto, a su vez, puede guiar la formulación de políticas más efectivas y focalizadas.
+
+Sin embargo, se sugiere indagar en los datos e intentar realizar una investigación mucho más profunda, añadir una pregunta más específica para así lograr encontrar una relación mucho más directa con respecto al nivel socioeconómico y el nivel de educación.
 
 Finalmente, se destaca la necesidad urgente de políticas públicas centradas en la equidad educativa como un medio crucial para reducir la brecha de ingresos y mitigar la desigualdad socioeconómica en Chile. Abordar estas disparidades no solo beneficiará a los individuos, sino que también contribuirá al desarrollo sostenible y al bienestar general del país. Este estudio abre la puerta a una mayor comprensión y acción en torno a las mejoras necesarias en el sistema educacional, con el fin de construir una sociedad más equitativa y próspera.
 
