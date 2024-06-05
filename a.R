@@ -110,11 +110,16 @@ qqline(residuals(modelo8), col="pink")
 
 lmtest::bptest(modelo8) #varianza no cte, hetero
 
-plot(modelo7, which = 1) #residuos
-plot(modelo7, which = 2) #residuos estandarizados
+plot(modelo7, which = 1,  main="Residuos") #residuos
+hist(residuals(modelo7), col="#D60270", main="Densidad Residuos", xlab="Residuos", ylab="")
 
-qqnorm(residuals(modelo7), col="pink")
-qqline(residuals(modelo7), col="pink")
+qqnorm(residuals(modelo7), col="#9B4F96")
+qqline(residuals(modelo7), col="#0038A8")
 
 lmtest::bptest(modelo7)
 shapiro.test(residuals(modelo7))
+
+residuos <- residuals(modelo7)
+ks.test(residuos, "pnorm", mean = mean(residuos), sd = sd(residuos)) #kolmogorov
+
+
