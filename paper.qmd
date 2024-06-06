@@ -61,6 +61,8 @@ Como se ha mencionado a lo largo de este trabajo la principal herramienta que se
 | Técnico / Universitario | 18.5% | 45.5% | 35.9% |
 | Postgrado               | 4.4%  | 27.5% | 68.2% |
 
+: Distribución de niveles del educacional y socieconómico de CASEN 2022
+
 La Tabla 1, indica que las personas con educación básica tienen una mayor probabilidad de estar en la categoría "Bajo" y una muy baja probabilidad de estar en la categoría "Alto". Además, las personas con educación de Postgrado tienen una muy baja probabilidad de estar en la categoría "Bajo" y una alta probabilidad de estar en la categoría "Alto". Además, se realizó un test de Chi-cuadrado de Pearson en el que se rechaza la hipótesis nula de independecia con un valor-p extremadamente pequeño, por lo que se indica que hay una relación estadísticamente significativa entre las variables de la Tabla 1, es decir, la distribución del nivel socioeconómico varía significativamente según el nivel educativo.
 
 Ahora que se tiene evidencia estadística para validar la creación de un modelo que lo explique se empleó un análisis de regresión lineal múltiple para evaluar la relación entre el nivel educativo y los ingresos del hogar. Para ello, las variables utilizadas incluyen el nivel educativo, el ingreso del hogar, la edad, el género y el nivel de empleo para el jefe de hogar. Se crearon distintos modelos posibles, algunos de ellos incluyendo el sexo como interacción y efecto aleatorio, los que se pueden resumir en la Tabla 2:
@@ -72,21 +74,31 @@ Ahora que se tiene evidencia estadística para validar la creación de un modelo
 | Modelo lmer(log(y1) \~ nivel_educ + (1 / sexo))       | 3231.300 |
 | Modelo lmer(log(y1) \~ nivel_educ\*sexo + (1 / sexo)) | 3231.291 |
 
+: Composición de modelos propuestos  y estadístico F asociado al modelo
+
 Es posible observar de la Tabla 2 que el modelo "lmer(log(y1) \~ nivel_educ + (1 \| sexo))" es el modelo que tiene el valor F más alto, lo que indica que este modelo puede ser el mejor en términos de ajuste a los datos. Sin embargo, la diferencia con el modelo "lmer(log(y1) \~ nivel_educ\*sexo + (1 \| sexo))" es mínima, por lo que, se tomó la decisión de dejar ese modelo como el modelo final e incluir la interacción de sexo, ya que, este modelo permite entender cómo el nivel educacional y el sexo del jefe de hogar influyen en los ingresos. Los principales resultados indican que existe una interacción significativa entre el nivel educativo y el sexo en la predicción del ingreso del hogar. Además, al agregar efectos aleatorios se logra capturar variabilidad no explicada entre los niveles de sexo, mejorando así la precisión del modelo.
+
+\newpage
 
 # Resultados
 
-Con la metodología estudiada y el análisis realizado se obtiene un modelo capturar la información que permite explicar como afecta el nivel educativo en los ingresos de los hogares en Chile. Además, existe evidencia estadística que permite validar el modelo seleccionado, pues el comportamiento de los residuos es el deseado, tal como se presenta en el gráfico de la densidad de los residuos a continuación.
+Con la metodología estudiada y el análisis realizado se obtiene un modelo que captura la información que permite explicar como afecta el nivel educativo en los ingresos de los hogares en Chile. Además, se confirmo que existe evidencia estadística que permite validar el modelo seleccionado, pues el comportamiento de los residuos es adecuado, tal como se presenta en la Figura 1 con la densidad de los residuos, en el que se puede ver que los residuos presentan un ajuste similar al de una distribución normal:
 
-![](densidad residuos)
+<div>
+<p style = 'text-align:center;'>
+  ![Densidad de los residuos](densidad.png){ width=40% }
+</p>
+</div>
 
-Se añade además, un qqplot que permitirá visualizar de manera mucho más clara la no presencia de normalidad en los residuos.
+Sin embargo, al revisar más profundamente los datos se observa que los residuos no tienen un comportamiento tan normal. Para ello, como se muestra en la Figura 2, se añade un qqplot que permite visualizar de manera más clara la no presencia de normalidad en los residuos.
 
-![](qqplot)
+<div style="text-align: center;">
+![Qqplot de los residuos](qqnorm.png){ width=40% }
+</div>
 
 Si bien el qqplot no indica que los residuos presentan normalidad, la naturaleza del modelo confirma que existe una relación significativa entre el nivel educativo y los ingresos del hogar en Chile. Las personas con niveles educativos más altos tienden a tener ingresos mayores, perpetuando la desigualdad socioeconómica del país.
 
-Finalmente, se tiene que los resultados subrayan la importancia de mejorar el acceso a la educación de calidad, especialmente para familias de bajos ingresos, y sugieren que intervenciones como becas y programas de apoyo académico pueden ser efectivas para reducir la brecha de ingresos entre distintos grupos socioeconómicos. Este estudio destaca la necesidad de políticas públicas enfocadas en la equidad educativa como un medio para mitigar la desigualdad de ingresos en Chile.
+En resumen, se tiene que los resultados subrayan la importancia de mejorar el acceso a la educación de calidad, especialmente para familias de bajos ingresos, y sugieren que intervenciones como becas y programas de apoyo académico pueden ser efectivas para reducir la brecha de ingresos entre distintos grupos socioeconómicos. Este estudio destaca la necesidad de políticas públicas enfocadas en la equidad educativa como un medio para mitigar la desigualdad de ingresos en Chile.
 
 # Conclusión/ Discusión
 
